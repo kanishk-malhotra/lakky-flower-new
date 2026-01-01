@@ -356,26 +356,63 @@ header .carousel-item img {
         <strong>Success!</strong> Your message has been sent. We will contact you soon!
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="https://img.icons8.com/color/96/lotus.png" alt="Logo">
-                Lakky Flower Works
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
-                    </li>
-                </ul>
-            </div>
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <img src="https://img.icons8.com/color/96/lotus.png" alt="Logo">
+            Lakky Flower Works
+        </a>
+
+        <!-- MOBILE BUTTON -->
+        <button class="navbar-toggler d-lg-none" type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#mobileNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- DESKTOP MENU -->
+        <div class="d-none d-lg-block">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        Contact
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end d-lg-none" tabindex="-1" id="mobileNav">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#home" data-bs-dismiss="offcanvas">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#services" data-bs-dismiss="offcanvas">Services</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#reviews" data-bs-dismiss="offcanvas">Reviews</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link"
+                   href="#"
+                   data-bs-toggle="modal"
+                   data-bs-target="#contactModal"
+                   data-bs-dismiss="offcanvas">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
    <header id="home" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -795,9 +832,9 @@ header .carousel-item img {
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         $(document).ready(function() {
             const galleryData = {
@@ -880,6 +917,25 @@ $(document).ready(function() {
             btn.prop('disabled', false).text(originalText);
             $('#contactForm')[0].reset();
         }, 1500);
+    });
+});
+document.querySelectorAll('#mobileNav .nav-link[href^="#"]').forEach(link => {
+    link.addEventListener('click', function () {
+        const offcanvasEl = document.getElementById('mobileNav');
+        const offcanvas = bootstrap.Offcanvas.getInstance(offcanvasEl);
+
+        if (offcanvas) {
+            offcanvas.hide();
+        }
+
+        const targetId = this.getAttribute('href');
+        const targetEl = document.querySelector(targetId);
+
+        if (targetEl) {
+            setTimeout(() => {
+                targetEl.scrollIntoView({ behavior: 'smooth' });
+            }, 300); // wait for offcanvas to close
+        }
     });
 });
 </script>
