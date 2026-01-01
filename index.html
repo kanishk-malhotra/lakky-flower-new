@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakky Flower Works | Professional Event Decoration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --floral-pink: #d63384; --soft-gold: #c5a059; }
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Navigation Updates */
+        .navbar-brand { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: bold; 
+            color: var(--floral-pink) !important; 
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        .nav-link { 
+            color: var(--floral-pink) !important; 
+            font-weight: 600; 
+        }
+        .nav-link:hover {
+            color: #b02a6b !important;
+        }
+
+        /* Why Choose Us Styling */
+        .feature-card {
+            background: #fff;
+            padding: 40px 25px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(214, 51, 132, 0.1);
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(214, 51, 132, 0.15);
+            border-color: var(--floral-pink);
+        }
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background: rgba(214, 51, 132, 0.05);
+            color: var(--floral-pink);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin: 0 auto 20px;
+            transition: 0.3s;
+        }
+        .feature-card:hover .icon-circle {
+            background: var(--floral-pink);
+            color: #fff;
+        }
+
+        /* Testimonials Styling */
+        .testimonial-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: 100%;
+            text-align: center;
+            border: 1px solid rgba(214, 51, 132, 0.1);
+            margin: 5px;
+            transition: 0.3s;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(214, 51, 132, 0.1);
+        }
+
+        /* Fixed Client Image Size */
+        .client-img-small {
+            width: 60px; /* Corrected from 8px */
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 2px solid var(--floral-pink);
+            display: inline-block;
+        }
+
+        .rating-stars { 
+            color: #ffc107; 
+            font-size: 0.8rem;
+            margin-bottom: 8px; 
+        }
+
+        .quote-text-small {
+            font-size: 0.85rem;
+            color: #555;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        /* Medium Height: 50vh is half the screen */
+header .carousel-item img { 
+    height: 50vh !important; 
+    width: 100%; 
+    object-fit: cover; 
+}
+
+/* Faster sliding animation (the transition between slides) */
+.carousel-item {
+    transition: transform 0.4s ease-in-out !important; 
+}
+        .service-card {
+            transition: transform 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .service-card:hover { transform: translateY(-10px); }
+        .img-hover { height: 250px; object-fit: cover; }
+        
+        .gallery-img {
+            height: 250px; 
+            width: 100%; 
+            object-fit: cover; 
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn-floral { background-color: var(--floral-pink); color: white; border-radius: 30px; padding: 10px 25px; }
+        .btn-floral:hover { background-color: #b02a6b; color: white; }
+
+        footer {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 60px 0 20px;
+            font-size: 0.9rem;
+        }
+        footer h5 {
+            color: var(--floral-pink);
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        footer h5::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 40px;
+            height: 2px;
+            background: var(--floral-pink);
+        }
+        .footer-link {
+            color: #bbb;
+            text-decoration: none;
+            transition: 0.3s;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .footer-link:hover {
+            color: var(--floral-pink);
+            padding-left: 5px;
+        }
+        .footer-contact-item {
+            display: flex;
+            align-items: start;
+            margin-bottom: 15px;
+            color: #bbb;
+        }
+        .footer-contact-item i {
+            color: var(--floral-pink);
+            margin-right: 12px;
+            margin-top: 4px;
+        }
+        .social-icons a {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            margin-right: 10px;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            background: var(--floral-pink);
+            transform: translateY(-3px);
+        }
+        .copyright-bar {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+            padding-top: 20px;
+            color: #777;
+        }
+
+        /* Floating Contact Buttons */
+        .floating-contact {
+            position: fixed;
+            top: 50%; 
+            right: 0; 
+            transform: translateY(-50%); 
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 9999;
+        }
+        .float-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px 0 0 5px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            box-shadow: -2px 2px 10px rgba(0,0,0,0.2);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .float-icon:hover { width: 60px; color: white; }
+        .float-whatsapp { background-color: #25d366; }
+        .float-call { background-color: #007bff; }
+
+        #reviews {
+            padding-bottom: 60px;
+        }
+
+        /* Faster Slider Transition */
+        .carousel-item {
+            transition: transform 0.5s ease-in-out; 
+        }
+        /* Modal Styling */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-backdrop.show {
+    opacity: 0.7;
+    backdrop-filter: blur(4px);
+}
+
+.contact-info-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(214, 51, 132, 0.1);
+}
+
+.contact-cta-card {
+    background: var(--floral-pink);
+    color: white;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.form-control:focus {
+    border-color: var(--floral-pink);
+    box-shadow: 0 0 0 0.25rem rgba(214, 51, 132, 0.25);
+}
+
+/* Success Message Animation */
+#successMessage {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1060;
+}
+ :root {
+            --floral-pink: #d63384;
+            --soft-gold: #c5a059;
+        }
+
+        /* Modal Styling */
+        .modal-content {
+            border-radius: 20px;
+            border: none;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-backdrop.show {
+            opacity: 0.7;
+            backdrop-filter: blur(4px);
+        }
+
+        .contact-info-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(214, 51, 132, 0.1);
+        }
+
+        .contact-cta-card {
+            background: var(--floral-pink);
+            color: white;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--floral-pink);
+            box-shadow: 0 0 0 0.25rem rgba(214, 51, 132, 0.25);
+        }
+
+        .btn-floral {
+            background-color: var(--floral-pink);
+            color: white;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .btn-floral:hover {
+            background-color: #b02a6b;
+            color: white;
+        }
+
+        /* Success Message Alert */
+        #successMessage {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+            width: auto;
+            min-width: 300px;
+        }
+</style>
+</head>
+<body>
+
+    <div class="floating-contact">
+        <a href="https://wa.me/91XXXXXXXXXX" class="float-icon float-whatsapp" data-label="WhatsApp Us" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+91XXXXXXXXXX" class="float-icon float-call" data-label="Call Now">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+    <div id="successMessage" class="alert alert-success shadow-lg text-center">
+        <strong>Success!</strong> Your message has been sent. We will contact you soon!
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://img.icons8.com/color/96/lotus.png" alt="Logo">
+                Lakky Flower Works
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <header id="home" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#home" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#home" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#home" data-bs-slide-to="2"></button>
+    </div>
+    
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="1500">
+            <img src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg" alt="Wedding">
+            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="display-4 fw-bold">Wedding Decoration</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="1500">
+            <img src="https://images.pexels.com/photos/14745477/pexels-photo-14745477.jpeg" alt="Car">
+            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="display-4 fw-bold">Car Decoration</h1>
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="1500">
+            <img src="https://images.pexels.com/photos/14457430/pexels-photo-14457430.jpeg" alt="Birthday">
+            <div class="carousel-caption bg-dark bg-opacity-50 rounded p-4">
+                <h1 class="display-4 fw-bold">Birthday Decoration</h1>
+            </div>
+        </div>
+    </div>
+</header>
+    <section class="py-5" id="services">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Specialized Decorations</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="card service-card clickable-service" data-category="wedding" style="cursor: pointer;">
+                        <img src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg" class="card-img-top img-hover" alt="Wedding">
+                        <div class="card-body text-center">
+                            <h4>Wedding & Reception</h4>
+                            <button class="btn btn-outline-danger btn-sm">View Gallery</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card clickable-service" data-category="birthday" style="cursor: pointer;">
+                        <img src="https://images.pexels.com/photos/19481253/pexels-photo-19481253.jpeg" class="card-img-top img-hover" alt="Birthday">
+                        <div class="card-body text-center">
+                            <h4>Birthday & Anniversary</h4>
+                            <button class="btn btn-outline-danger btn-sm">View Gallery</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card service-card clickable-service" data-category="car" style="cursor: pointer;">
+                        <img src="https://images.pexels.com/photos/14745477/pexels-photo-14745477.jpeg" class="card-img-top img-hover" alt="Car">
+                        <div class="card-body text-center">
+                            <h4>Car Decoration</h4>
+                            <button class="btn btn-outline-danger btn-sm">View Gallery</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light" id="why-choose-us">
+        <div class="container text-center">
+            <span class="text-uppercase fw-bold" style="color: var(--floral-pink); letter-spacing: 2px; font-size: 14px;">Our Excellence</span>
+            <h2 class="mb-5 mt-2 fw-bold">Why Choose Lakky Flower Works</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="icon-circle"><i class="fa-solid fa-award"></i></div>
+                        <h5 class="fw-bold">10+ Years Experience</h5>
+                        <p class="text-muted small">Decades of expertise in making events magical and memorable.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="icon-circle"><i class="fa-solid fa-leaf"></i></div>
+                        <h5 class="fw-bold">Fresh Premium Flowers</h5>
+                        <p class="text-muted small">We source the highest quality fresh and artificial blooms for you.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="icon-circle"><i class="fa-solid fa-tags"></i></div>
+                        <h5 class="fw-bold">Affordable Pricing</h5>
+                        <p class="text-muted small">Luxury decorations designed to fit perfectly within your budget.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="feature-card">
+                        <div class="icon-circle"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h5 class="fw-bold">On-Time Setup</h5>
+                        <p class="text-muted small">Punctual and professional team ensuring everything is ready on time.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-white" id="reviews">
+    <div class="container text-center">
+        <span class="text-uppercase fw-bold" style="color: var(--floral-pink); letter-spacing: 2px; font-size: 12px;">Testimonials</span>
+        <h2 class="mb-5 mt-2 fw-bold">What Our Clients Say</h2>
+        
+        <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="client-img-small">
+                                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="quote-text-small">"Lakky Flower Works made our wedding absolutely beautiful. The decoration was classy."</p>
+                                <h6 class="fw-bold mb-0" style="font-size: 0.85rem;">Sneha K.</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="client-img-small">
+                                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="quote-text-small">"Best car decoration service. Very professional, punctual and affordable pricing."</p>
+                                <h6 class="fw-bold mb-0" style="font-size: 0.85rem;">Amit S.</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="client-img-small">
+                                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="quote-text-small">"Every design reflects creativity and quality. They truly exceed expectations."</p>
+                                <h6 class="fw-bold mb-0" style="font-size: 0.85rem;">Priya D.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Client" class="client-img-small">
+                                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="quote-text-small">"The birthday balloon decor was amazing. My kids loved it so much. Great team!"</p>
+                                <h6 class="fw-bold mb-0" style="font-size: 0.85rem;">Rahul V.</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="Client" class="client-img-small">
+                                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                <p class="quote-text-small">"Professional team and high-quality flowers used for our ceremony."</p>
+                                <h6 class="fw-bold mb-0" style="font-size: 0.85rem;">Anjali S.</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="testimonial-card">
+                                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Client" class="client-img-small">
+                                <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                                <p class="quote-text-small">"Reliable and creative. They turned our simple hall into a premium venue."</p>
+                                <h6 class="fw-bold mb-0" style="font-size: 0.85rem;">Vikram M.</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+            <button class="carousel-control-prev d-none d-md-flex" type="button" data-bs-target="#testimonialSlider" data-bs-slide="prev" style="width: 5%;">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
+            </button>
+            <button class="carousel-control-next d-none d-md-flex" type="button" data-bs-target="#testimonialSlider" data-bs-slide="next" style="width: 5%;">
+                <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+    <section class="py-5 bg-dark text-white" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Get In Touch</h2>
+                    <p>WhatsApp: +91 XXXXXXXXXX</p>
+                </div>
+                <div class="col-md-6">
+                    <form id="contactForm" class="bg-white p-4 rounded text-dark">
+                        <input type="text" class="form-control mb-3" placeholder="Your Name" required>
+                        <button type="submit" class="btn btn-floral w-100">Book Decoration</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a class="navbar-brand mb-3" href="#" style="color: white !important;">
+                        <img src="https://img.icons8.com/color/96/lotus.png" alt="Logo" style="height: 30px;">
+                        Lakky Flower Works
+                    </a>
+                    <p class="mt-3">
+                        Lakky Flower Works is a trusted name in flower and event decoration services, making every occasion beautiful and memorable.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/91XXXXXXXXXX"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 px-lg-5">
+                    <h5>Our Services</h5>
+                    <a href="#services" class="footer-link">Wedding Decoration</a>
+                    <a href="#services" class="footer-link">Car Decoration</a>
+                    <a href="#services" class="footer-link">Birthday & Party Decor</a>
+                    <a href="#services" class="footer-link">Stage & Mandap Decor</a>
+                    <a href="#services" class="footer-link">Home & Office Decor</a>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <h5>Get In Touch</h5>
+                    <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>[Your City Name]</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+91 XXXXXXXXXX</span></div>
+                    <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><span>+91 XXXXXXXXXX</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@lakkyflowerworks.com</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon - Sun: 8:00 AM – 10:00 PM</span></div>
+                </div>
+            </div>
+            <div class="row copyright-bar text-center">
+                <div class="col-md-12"><p style="text-decoration-color: #fff;"> 2026 Lakky Flower Works - Best Flower Decorator Near You</p></div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalTitle">Gallery</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body"><div class="row g-3" id="galleryContainer"></div></div>
+                
+            </div>
+        </div>
+    </div>
+   <div id="successMessage" class="alert alert-success shadow-lg text-center">
+    <strong>Success!</strong> Your message has been sent. We will contact you soon!
+</div>
+
+<div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-0 position-relative">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                
+                <div class="container-fluid p-4 p-md-5">
+                    <div class="text-center mb-5">
+                        <h2 class="display-6 fw-bold">Get in Touch</h2>
+                        <div style="width: 60px; height: 3px; background: var(--floral-pink); margin: 10px auto;"></div>
+                        <p class="text-muted">Planning a function? Let us handle the decoration while you enjoy your special day[cite: 66].</p>
+                    </div>
+
+                    <div class="row g-4">
+                        <div class="col-lg-5">
+                            <div class="contact-info-card mb-4">
+                                <h4 class="mb-4 fw-bold">Contact Info</h4>
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-map-marker-alt text-danger me-3 mt-1"></i>
+                                    <div>
+                                        <p class="fw-bold mb-0">Location</p>
+                                        <p class="text-muted mb-0">Your City Name [cite: 67]</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>
+                                    <div>
+                                        <p class="fw-bold mb-0">Phone</p>
+                                        <p class="text-muted mb-0">+91 XXXXXXXXXX [cite: 70]</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-3">
+                                    <i class="fas fa-envelope text-danger me-3 mt-1"></i>
+                                    <div>
+                                        <p class="fw-bold mb-0">Email</p>
+                                        <p class="text-muted mb-0">info@lakkyflowerworks.com [cite: 72]</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex mb-0">
+                                    <i class="fas fa-clock text-danger me-3 mt-1"></i>
+                                    <div>
+                                        <p class="fw-bold mb-0">Working Hours</p>
+                                        <p class="text-muted mb-0">Mon - Sun | 8:00 AM – 10:00 PM [cite: 74]</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-cta-card">
+                                <h4 class="fw-bold mb-3">Book Your Decoration Today!</h4>
+                                <p class="small mb-4">Get beautiful decorations at affordable prices. Contact Lakky Flower Works now for a free consultation[cite: 81, 82].</p>
+                                <div class="d-grid gap-2">
+                                    <a href="tel:+91XXXXXXXXXX" class="btn btn-light fw-bold" style="color: var(--floral-pink)">Call Now</a>
+                                    <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-success fw-bold text-white">WhatsApp Us</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-7">
+                            <form id="contactForm" class="p-2">
+                                <h4 class="mb-4 fw-bold text-dark">Send Us a Message</h4>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">Your Name *</label>
+                                        <input type="text" class="form-control py-2" required placeholder="Enter your name">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label small fw-bold">Phone Number *</label>
+                                        <input type="tel" class="form-control py-2" required placeholder="Enter phone number">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold">Event Type *</label>
+                                        <select class="form-select py-2" required>
+                                            <option value="">Select event type</option>
+                                            <option>Wedding & Reception [cite: 18]</option>
+                                            <option>Stage & Mandap [cite: 21]</option>
+                                            <option>Car Decoration [cite: 20]</option>
+                                            <option>Birthday & Anniversary [cite: 19]</option>
+                                            <option>Home & Office [cite: 22]</option>
+                                            <option>Religious & Festival [cite: 23]</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold">Event Date</label>
+                                        <input type="date" class="form-control py-2">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label small fw-bold">Message</label>
+                                        <textarea class="form-control" rows="4" placeholder="Tell us about your requirements..."></textarea>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" id="submitBtn" class="btn btn-floral w-100 py-3 fw-bold shadow-sm">
+                                            Send Message
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-0 position-relative">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    <div class="container-fluid p-4 p-md-5">
+                        <div class="text-center mb-5">
+                            <h2 class="display-6 fw-bold">Get in Touch</h2>
+                            <div style="width: 60px; height: 3px; background: var(--floral-pink); margin: 10px auto;"></div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-lg-5">
+                                <div class="contact-info-card mb-4">
+                                    <h4 class="mb-4 fw-bold">Contact Info</h4>
+                                    <div class="d-flex mb-3">
+                                        <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>
+                                        <div><p class="fw-bold mb-0">Phone</p><p class="text-muted mb-0">+91 XXXXXXXXXX</p></div>
+                                    </div>
+                                    <div class="d-flex mb-3">
+                                        <i class="fas fa-envelope text-danger me-3 mt-1"></i>
+                                        <div><p class="fw-bold mb-0">Email</p><p class="text-muted mb-0">info@lakkyflowerworks.com</p></div>
+                                    </div>
+                                </div>
+                                <div class="contact-cta-card">
+                                    <h4 class="fw-bold mb-3">Book Today!</h4>
+                                    <div class="d-grid gap-2">
+                                        <a href="tel:+91XXXXXXXXXX" class="btn btn-light fw-bold" style="color: var(--floral-pink)">Call Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-7">
+                                <form id="modalContactForm" class="p-2">
+                                    <h4 class="mb-4 fw-bold text-dark">Send Us a Message</h4>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">Your Name *</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">Phone Number *</label>
+                                            <input type="tel" class="form-control" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label small fw-bold">Message</label>
+                                            <textarea class="form-control" rows="4"></textarea>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <button type="submit" id="submitBtn" class="btn btn-floral w-100 py-3 fw-bold">
+                                                Send Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const galleryData = {
+                wedding: { title: "Wedding & Reception Gallery", images: ["https://images.pexels.com/photos/1616113/pexels-photo-1616113.jpeg", "https://images.pexels.com/photos/2306277/pexels-photo-2306277.jpeg", "https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg", "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg"] },
+                birthday: { title: "Birthday & Anniversary Gallery", images: ["https://images.pexels.com/photos/19481253/pexels-photo-19481253.jpeg", "https://images.pexels.com/photos/14457430/pexels-photo-14457430.jpeg", "https://images.pexels.com/photos/14457436/pexels-photo-14457436.jpeg", "https://images.pexels.com/photos/14187989/pexels-photo-14187989.jpeg"] },
+                car: { title: "Car Decoration Gallery", images: ["https://images.pexels.com/photos/14745477/pexels-photo-14745477.jpeg", "https://images.pexels.com/photos/19894151/pexels-photo-19894151.jpeg", "https://images.pexels.com/photos/23997981/pexels-photo-23997981.jpeg", "https://images.pexels.com/photos/17540373/pexels-photo-17540373.jpeg"] }
+            };
+
+            $('.clickable-service').on('click', function() {
+                const cat = $(this).data('category');
+                const data = galleryData[cat];
+                if(data) {
+                    $('#modalTitle').text(data.title);
+                    $('#galleryContainer').empty();
+                    data.images.forEach(imgUrl => {
+                        $('#galleryContainer').append(`<div class="col-12 col-md-6 mb-2"><img src="${imgUrl}" class="gallery-img" alt="Decor"></div>`);
+                    });
+                    $('#galleryModal').modal('show');
+                }
+            });
+        });
+    </script>
+    <script>
+    $(document).ready(function() {
+        // Force the carousel to move every 1.5 seconds
+        var myCarousel = document.querySelector('#home');
+        var carousel = new bootstrap.Carousel(myCarousel, {
+          interval: 1500, // 1.5 seconds
+          ride: 'carousel',
+          pause: false // Slides won't stop even if mouse is over them
+        });
+        
+        // ... your other gallery code ...
+    });
+    $(document).ready(function() {
+    // Handle form submission
+    $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        const btn = $('#submitBtn');
+        const originalText = btn.text();
+        
+        // Show loading state
+        btn.prop('disabled', true).text('Sending Message...');
+
+        // Simulate network delay
+        setTimeout(() => {
+            // 1. Hide the Modal using Bootstrap's method
+            const contactModal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+            if (contactModal) contactModal.hide();
+
+            // 2. Show Success Alert
+            $('#successMessage').fadeIn().delay(4000).fadeOut();
+
+            // 3. Reset Button and Form
+            btn.prop('disabled', false).text(originalText);
+            $('#contactForm')[0].reset();
+        }, 1500);
+    });
+});
+$(document).ready(function() {
+    // Handle form submission
+    $('#contactForm').on('submit', function(e) {
+        e.preventDefault();
+        const btn = $('#submitBtn');
+        const originalText = btn.text();
+        
+        // Show loading state
+        btn.prop('disabled', true).text('Sending Message...');
+
+        // Simulate network delay
+        setTimeout(() => {
+            // 1. Hide the Modal using Bootstrap's method
+            const contactModal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+            if (contactModal) contactModal.hide();
+
+            // 2. Show Success Alert
+            $('#successMessage').fadeIn().delay(4000).fadeOut();
+
+            // 3. Reset Button and Form
+            btn.prop('disabled', false).text(originalText);
+            $('#contactForm')[0].reset();
+        }, 1500);
+    });
+});
+</script>
+
+</body>
+</html>

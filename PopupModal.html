@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakky Flower Works | Professional Event Decoration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --floral-pink: #d63384; --soft-gold: #c5a059; }
+        body { font-family: 'Poppins', sans-serif; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        
+        /* Navigation Styling */
+        .navbar-brand { font-family: 'Playfair Display', serif; font-weight: bold; color: var(--floral-pink) !important; display: flex; align-items: center; }
+        .navbar-brand img { height: 40px; margin-right: 10px; }
+        .nav-link { color: var(--floral-pink) !important; font-weight: 600; cursor: pointer; }
+        .nav-link:hover { color: #b02a6b !important; }
+
+        /* Feature Cards */
+        .feature-card { background: #fff; padding: 40px 25px; border-radius: 20px; transition: all 0.3s ease; border: 1px solid rgba(214, 51, 132, 0.1); height: 100%; }
+        .feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(214, 51, 132, 0.15); border-color: var(--floral-pink); }
+        .icon-circle { width: 80px; height: 80px; background: rgba(214, 51, 132, 0.05); color: var(--floral-pink); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; margin: 0 auto 20px; transition: 0.3s; }
+        .feature-card:hover .icon-circle { background: var(--floral-pink); color: #fff; }
+
+        /* Modal & Form Styling */
+        .modal-content { border-radius: 20px; border: none; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+        .modal-backdrop.show { opacity: 0.7; backdrop-filter: blur(4px); }
+        .contact-info-card { background: #fff; border-radius: 15px; padding: 25px; border: 1px solid rgba(214, 51, 132, 0.1); }
+        .contact-cta-card { background: var(--floral-pink); color: white; border-radius: 15px; padding: 25px; }
+        .btn-floral { background-color: var(--floral-pink); color: white; border-radius: 30px; transition: 0.3s; padding: 10px 25px; }
+        .btn-floral:hover { background-color: #b02a6b; color: white; }
+
+        /* Alerts */
+        #successMessage { display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; min-width: 300px; }
+
+        /* General UI */
+        header .carousel-item img { height: 50vh !important; width: 100%; object-fit: cover; }
+        .floating-contact { position: fixed; top: 50%; right: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 9999; }
+        .float-icon { width: 50px; height: 50px; border-radius: 5px 0 0 5px; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; text-decoration: none; transition: 0.3s; }
+        .float-whatsapp { background-color: #25d366; }
+        .float-call { background-color: #007bff; }
+    </style>
+</head>
+<body>
+
+    <div id="successMessage" class="alert alert-success shadow-lg text-center">
+        <strong>Success!</strong> Your message has been sent. We will contact you soon!
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://img.icons8.com/color/96/lotus.png" alt="Logo">
+                Lakky Flower Works
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="2000">
+                <img src="https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg" alt="Wedding">
+                <div class="carousel-caption bg-dark bg-opacity-50 rounded p-4">
+                    <h1 class="display-4 fw-bold">Wedding Decoration</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body p-0 position-relative">
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                    
+                    <div class="container-fluid p-4 p-md-5">
+                        <div class="text-center mb-5">
+                            <h2 class="display-6 fw-bold">Get in Touch</h2>
+                            <div style="width: 60px; height: 3px; background: var(--floral-pink); margin: 10px auto;"></div>
+                        </div>
+
+                        <div class="row g-4">
+                            <div class="col-lg-5">
+                                <div class="contact-info-card mb-4">
+                                    <h4 class="mb-4 fw-bold">Contact Info</h4>
+                                    <div class="d-flex mb-3">
+                                        <i class="fas fa-phone-alt text-danger me-3 mt-1"></i>
+                                        <div><p class="fw-bold mb-0">Phone</p><p class="text-muted mb-0">+91 XXXXXXXXXX</p></div>
+                                    </div>
+                                    <div class="d-flex mb-3">
+                                        <i class="fas fa-envelope text-danger me-3 mt-1"></i>
+                                        <div><p class="fw-bold mb-0">Email</p><p class="text-muted mb-0">info@lakkyflowerworks.com</p></div>
+                                    </div>
+                                </div>
+                                <div class="contact-cta-card">
+                                    <h4 class="fw-bold mb-3">Book Today!</h4>
+                                    <div class="d-grid gap-2">
+                                        <a href="tel:+91XXXXXXXXXX" class="btn btn-light fw-bold" style="color: var(--floral-pink)">Call Now</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-7">
+                                <form id="modalContactForm" class="p-2">
+                                    <h4 class="mb-4 fw-bold text-dark">Send Us a Message</h4>
+                                    <div class="row g-3">
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">Your Name *</label>
+                                            <input type="text" class="form-control" required>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label small fw-bold">Phone Number *</label>
+                                            <input type="tel" class="form-control" required>
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label small fw-bold">Message</label>
+                                            <textarea class="form-control" rows="4"></textarea>
+                                        </div>
+                                        <div class="col-12 mt-4">
+                                            <button type="submit" id="submitBtn" class="btn btn-floral w-100 py-3 fw-bold">
+                                                Send Message
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#modalContactForm').on('submit', function(e) {
+            e.preventDefault();
+            const btn = $('#submitBtn');
+            const originalText = btn.text();
+            
+            btn.prop('disabled', true).text('Sending...');
+
+            setTimeout(() => {
+                // Hide the Modal
+                const contactModal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+                contactModal.hide();
+
+                // Show Success Alert
+                $('#successMessage').fadeIn().delay(3000).fadeOut();
+
+                // Reset
+                btn.prop('disabled', false).text(originalText);
+                $('#modalContactForm')[0].reset();
+            }, 1500);
+        });
+    });
+    </script>
+</body>
+</html>
